@@ -13,7 +13,7 @@ class ResetPassBottomSheet extends StatefulWidget {
   _ResetPassBottomSheetState createState() => _ResetPassBottomSheetState();
 }
 
-class _ResetPassBottomSheetState extends State<_ResetPassBottomSheetState> {
+class _ResetPassBottomSheetState extends State<ResetPassBottomSheet> {
   final _auth = FirebaseAuth.instance;
   final _formKey = GlobalKey<FormState>();
   List<String> _errors = [];
@@ -85,7 +85,7 @@ class _ResetPassBottomSheetState extends State<_ResetPassBottomSheetState> {
               ],
             ),
           ),
-        ], //widget
+        ],
       ),
     );
   }
