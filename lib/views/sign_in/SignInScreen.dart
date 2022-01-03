@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ecommerce_app/views/sign_up/SignUpScreen.dart';
@@ -20,7 +18,7 @@ import 'package:internet_connection_checker/internet_connection_checker.dart';
 class SignInScreen extends StatefulWidget {
   static String routeName = "/sign_in";
   @override
-  _SignFromState createState() => _SignFormState();
+  _SignFormState createState() => _SignFormState();
 }
 
 class _SignFormState extends State<SignInScreen> {
@@ -124,6 +122,31 @@ class _SignFormState extends State<SignInScreen> {
                       FormError(errors: _errors),
                       SizedBox(height: SizeConfig.screenHeight * 0.02),
                       buildTextWithIcon(),
+                      // SizedBox(height: SizeConfig.screenHeight * 0.03),
+                      // Divider(
+                      //   thickness: 2,
+                      //   endIndent: getProportionateScreenWidth(40),
+                      //   indent: getProportionateScreenWidth(40),
+                      //   color: SecondaryColor.withOpacity(0.25),
+                      // ),
+                      // SizedBox(height: SizeConfig.screenHeight * 0.03),
+                      // Row(
+                      //   mainAxisAlignment: MainAxisAlignment.center,
+                      //   children: [
+                      //     SocialCard(
+                      //       icon: "assets/icons/google-icon.svg",
+                      //       press: () {},
+                      //     ),
+                      //     SocialCard(
+                      //       icon: "assets/icons/apple-logo.svg",
+                      //       press: () {},
+                      //     ),
+                      //     SocialCard(
+                      //       icon: "assets/icons/facebook-2.svg",
+                      //       press: () {},
+                      //     ),
+                      //   ],
+                      // ),
                     ],
                   ),
                 ),
@@ -259,6 +282,13 @@ class _SignFormState extends State<SignInScreen> {
       });
   }
 
+  void removeError({String error}) {
+    if (_errors.contains(error))
+      setState(() {
+        _errors.remove(error);
+      });
+  }
+
   TextFormField buildPasswordFormField() {
     return TextFormField(
       style: TextStyle(fontWeight: FontWeight.w800),
@@ -350,6 +380,12 @@ class _SignFormState extends State<SignInScreen> {
   }
 }
 
+// class signUpRedirect extends StatelessWidget {
+//   const signUpRedirect({
+//     Key key,
+//   }) : super(key: key);
+
+//   @override
 Widget signUpRedirect(BuildContext context) {
   return ElevatedButton(
     child: Text(
@@ -377,3 +413,4 @@ Widget signUpRedirect(BuildContext context) {
     },
   );
 }
+// }
